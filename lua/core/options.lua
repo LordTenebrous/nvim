@@ -12,5 +12,4 @@ vim.opt.expandtab = true
 vim.opt.autoindent = true
 vim.opt.mouse = 'a'
 
-vim.g.mapleader = ","
 

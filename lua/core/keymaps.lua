@@ -1,3 +1,6 @@
+-- Map ',' to <Leader>
+vim.g.mapleader = ","
+
 -- Map <C-j> to <Down> in Insert mode
 vim.keymap.set('i', '<C-j>', '<Down>', {silent = true, noremap = true})
 
