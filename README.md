@@ -76,3 +76,24 @@ Understand the filetree for easier customization:
         ├── telescope.lua
         └── treesitter.lua
 ```
+
+## Try it with Docker
+
+clone the repository and run the following command:
+
+```zsh
+docker build -t neovim-config-test .
+```
+
+Now that the dockercontainer is built, you can run the following command to start the container:
+
+```zsh
+docker run --rm -it neovim-config-test
+```
+
+To remove the image afterwards, run the following command:
+
+```zsh
+docker rmi neovim-config-test
+```
+
