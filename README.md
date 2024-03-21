@@ -49,6 +49,8 @@ Customize your workflow with these keybindings:
 - **Close Tagbar**: `<leader>tc` (Normal mode)
 - **Move in Insert Mode**: `<C-h>`, `<C-j>`, `<C-k>`, `<C-l>` (Insert mode)
 
+**INFO**: clangd does currently not work for arm devices with mason!
+
 ## Directory Structure
 
 Understand the filetree for easier customization:
