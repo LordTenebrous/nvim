@@ -19,3 +19,9 @@ vim.keymap.set('i', '<C-f>', '<Right>', {silent = true, noremap = true})
 -- Map <C-d> to <Del> in Insert mode
 vim.keymap.set('i', '<C-d>', '<Del>', {silent = true, noremap = true})
 
+-- Map :tabnext<CR> to <TAB> in Normal mode
+vim.keymap.set('n', '<TAB>', ':tabnext<CR>', {silent = true, noremap = true})
+
+-- Map :tabprevious<CR> to <TAB> in Normal mode
+vim.keymap.set('n', '<S-TAB>', ':tabprevious<CR>', {silent = true, noremap = true})
+
