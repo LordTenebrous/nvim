@@ -1,65 +1,49 @@
-local os_name = vim.loop.os_uname().sysname
-
-if os_name == "FreeBSD" then
 return {
-  -- FreeBSD specific configuration
-  -- require('lspconfig').clangd.setup{}
-  {
-		"neovim/nvim-lspconfig",
-		config = function()
-            local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-			local lspconfig = require("lspconfig")
-			lspconfig.lua_ls.setup({
-                capabilities = capabilities
-            })
-            lspconfig.clangd.setup({
-                capabilities = capabilities
-            })
-            lspconfig.marksman.setup({
-                capabilities = capabilities
-            })
-			vim.keymap.set("n", "I", vim.lsp.buf.hover, {})
-			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
-		end,
-	},
-}
-else
-return {
+  -- Mason setup for managing LSP servers (excluding ccls)
   {
     "williamboman/mason.nvim",
-      config = function()
-        require("mason").setup()
-        end,
+    config = function()
+      require("mason").setup()
+    end,
   },
-    {
-      "williamboman/mason-lspconfig.nvim",
-      config = function()
-        require("mason-lspconfig").setup({
-            ensure_installed = { "lua_ls", "clangd", "marksman" },
-            })
-      end,
-    },
-    {
-      "neovim/nvim-lspconfig",
-      config = function()
-        local capabilities = require('cmp_nvim_lsp').default_capabilities()
+  -- Mason LSP Config setup
+  {
+    "williamboman/mason-lspconfig.nvim",
+    config = function()
+      require("mason-lspconfig").setup({
+        -- List other servers to ensure they are installed by Mason
+        ensure_installed = { "lua_ls", "marksman" },
+      })
+    end,
+  },
+  -- LSP configuration using lspconfig
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      -- Set up capabilities for autocompletion
+      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local lspconfig = require("lspconfig")
 
-        local lspconfig = require("lspconfig")
-        lspconfig.lua_ls.setup({
-            capabilities = capabilities
-            })
-      lspconfig.clangd.setup({
-          capabilities = capabilities
-          })
+      -- Lua Language Server setup (example for other languages)
+      lspconfig.lua_ls.setup({
+        capabilities = capabilities
+      })
+      
+      -- ccls setup
+      lspconfig.ccls.setup({
+        capabilities = capabilities
+      })
+
+      -- Marksman (example of other server)
       lspconfig.marksman.setup({
-          capabilities = capabilities
-          })
+        capabilities = capabilities
+      })
+
+      -- Key mappings for LSP functionalities
       vim.keymap.set("n", "I", vim.lsp.buf.hover, {})
-        vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
-        vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
-        end,
-    },
+      vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
+      vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+    end,
+  },
 }
-end
+
