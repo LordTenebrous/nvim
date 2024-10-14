@@ -18,6 +18,7 @@ Ensure the following dependencies are installed on your system:
 - **Neovim**: Version 0.7.5 or higher.
 - **Exuberant Ctags**: Needed for tag generation in various plugins.
 - **Jetbraisn Nerdfont** can be installed here: [Nerdfont.com](https://www.nerdfonts.com/font-downloads)
+- **ccls**: Required for C/C++ language server support.
 
 ## Featured Plugins
 
