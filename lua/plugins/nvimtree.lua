@@ -34,7 +34,6 @@ return {
 
 		-- Key mappings
 		vim.keymap.set({ "n", "i", "v" }, "<c-b>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
-		vim.keymap.set({ "n", "i", "v" }, "<c-f>", "<Esc>:NvimTreeFocus<CR>", { noremap = true, silent = true })
 	end,
 }
 
