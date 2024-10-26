@@ -33,7 +33,7 @@ return {
     vim.opt.winbar = nil  -- Remove the winbar if using it
 
     -- Key mappings
-    vim.keymap.set({ "n", "i", "v" }, "<c-b>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
+    vim.keymap.set({ "n", "i", "v" }, "<c-b>", "<ESC>:NvimTreeToggle<CR>", { noremap = true, silent = true })
 
     -- Keymap for ESC to toggle NvimTree if it's open
     vim.keymap.set("n", "<Esc>", function()
