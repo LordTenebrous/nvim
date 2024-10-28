@@ -17,23 +17,27 @@ Ensure the following dependencies are installed on your system:
 - **Vim**: Required for backward compatibility with Vimscript configurations.
 - **Neovim**: Version 0.7.5 or higher.
 - **Exuberant Ctags**: Needed for tag generation in various plugins.
-- **Jetbraisn Nerdfont** can be installed here: [Nerdfont.com](https://www.nerdfonts.com/font-downloads)
+- **Jetbrains Nerdfont** can be installed here: [Nerdfont.com](https://www.nerdfonts.com/font-downloads)
 - **ccls**: Required for C/C++ language server support.
 
 ## Featured Plugins
 
 This configuration includes a variety of plugins to enhance functionality:
 
+- `alpha-nvim`: A customizable dashboard for Neovim
 - `autopairs`: Automatically pairs brackets and quotes.
 - `colorscheme`: Enables custom color schemes for the editor.
 - `completion`: Provides code completion features.
+- `lazygit`: Integrates the lazygit terminal tool.
 - `lsp-config`: Configures the Language Server Protocol for languages like Lua, C/C++, CMake, and Markdown.
+- `lualine`: A status line plugin for Neovim.
+- `neogen`: For doxygen comments.
+- `none-ls`: A lightweight LSP alternative.
+- `nvim-tree`: A file explorer plugin.
 - `treesitter`: Improves syntax highlighting and parsing.
 - `telescope`: Offers fuzzy file finding, picking, previewing, and more.
-- `nvim-tree`: A file explorer plugin.
-- `lualine`: A status line plugin for Neovim.
-- `none-ls`: A lightweight LSP alternative.
 - `tagbar`: Displays tags in a sidebar for easy navigation.
+- `todo-comments`: Highlights TODO, FIXME, and other annotations within code.
 
 ## Keybindings
 
@@ -44,13 +48,16 @@ Customize your workflow with these keybindings:
 - **Go to Definition**: `<leader>gd` (Normal mode)
 - **Code Action**: `<leader>ca` (Normal and Visual mode)
 - **Format Code**: `<leader>cf` (Normal mode)
+- **Lazygit**: `<leader>lg` (Normal mode)
+- **Doxygen Comments**: `<leader>nd` (Normal mode)
+- **Code Formatting**: `<leader>cf` (Normal mode)
 - **Toggle NvimTree**: `<C-b>` (Normal, Insert, and Visual mode)
-- **Focus NvimTree**: `<C-f>` (Normal, Insert, and Visual mode)
 - **Toggle Tagbar**: `<leader>tb` (Normal mode)
 - **Close Tagbar**: `<leader>tc` (Normal mode)
+- **Search Files**: `<C-p>` (Normal mode)
+- **Search Text in Files**: `<leader>g` (Normal mode)
 - **Move in Insert Mode**: `<C-h>`, `<C-j>`, `<C-k>`, `<C-l>` (Insert mode)
 
-**INFO**: clangd does currently not work for arm devices with mason!
 
 ## Directory Structure
 
@@ -58,25 +65,29 @@ Understand the filetree for easier customization:
 
 ```zsh
 .
+├── Dockerfile
 ├── README.md
 ├── init.lua
-├── lazy-lock.json
 └── lua
     ├── core
-    │   ├── commands.lua
-    │   ├── keymaps.lua
-    │   └── options.lua
+    │   ├── colorscheme.lua
+    │   ├── commands.lua
+    │   ├── keymaps.lua
+    │   └── options.lua
     └── plugins
+        ├── alpha-nvim.lua
         ├── autopairs.lua
         ├── colorscheme.lua
         ├── completion.lua
+        ├── lazygit.lua
         ├── lsp-config.lua
         ├── lualine.lua
+        ├── neogen.lua
         ├── none-ls.lua
         ├── nvimtree.lua
-        ├── startup.lua
         ├── tagbar.lua
         ├── telescope.lua
+        ├── todo_comments.lua
         └── treesitter.lua
 ```
 
