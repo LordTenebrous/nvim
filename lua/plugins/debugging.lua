@@ -43,7 +43,7 @@ return {
     overseer.setup()
 
     -- Keybinding for running tasks from tasks.json
-    vim.keymap.set("n", "<leader>bb", ":OverseerRun Build<CR>", {
+    vim.keymap.set("n", "<leader>bb", ":OverseerRun<CR>", {
       noremap = true,
       silent = true,
       desc = "Run Build Task from tasks.json",
@@ -77,7 +77,7 @@ return {
     vim.keymap.set("n", "<leader>do", dap.step_over, { desc = "Step Over" })
     vim.keymap.set("n", "<leader>di", dap.step_into, { desc = "Step Into" })
     vim.keymap.set("n", "<leader>du", dap.step_out, { desc = "Step Out" })
-    vim.keymap.set("n", "<leader>b", dap.toggle_breakpoint, { desc = "Toggle Breakpoint" })
+    vim.keymap.set("n", "<leader>db", dap.toggle_breakpoint, { desc = "Toggle Breakpoint" })
     vim.keymap.set("n", "<leader>B", function()
       dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
     end, { desc = "Set Conditional Breakpoint" })
