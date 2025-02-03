@@ -19,6 +19,7 @@ Ensure the following dependencies are installed on your system:
 - **Exuberant Ctags**: Needed for tag generation in various plugins.
 - **Jetbrains Nerdfont** can be installed here: [Nerdfont.com](https://www.nerdfonts.com/font-downloads)
 - **ccls**: Required for C/C++ language server support.
+- **llvm**: Required for debugging (lldb and lldb-dap)
 
 ## Featured Plugins
 
