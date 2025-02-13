@@ -1,92 +1,91 @@
 # Neovim Configuration in Lua
 
-This guide provides the steps to install and configure Neovim using Lua, enhancing your development environment with efficient plugins and keybindings.
+Welcome to my **Neovim Configuration**! This setup leverages Lua for a modern, high-performance coding experience, packed with essential plugins and optimized keybindings.
 
-## Installation
+## 🚀 Installation
 
-Clone the Neovim configuration repository to your `.config/nvim` directory:
+Clone this repository into your Neovim configuration directory:
 
 ```bash
 git clone https://github.com/LeonWandruschka/nvim-lua-config.git ~/.config/nvim
 ```
 
-## Prerequisites
+## 📌 Prerequisites
 
-Ensure the following dependencies are installed on your system:
+Ensure you have the following dependencies installed:
 
-- **Vim**: Required for backward compatibility with Vimscript configurations.
-- **Neovim**: Version 0.7.5 or higher.
-- **Exuberant Ctags**: Needed for tag generation in various plugins.
-- **Jetbrains Nerdfont** can be installed here: [Nerdfont.com](https://www.nerdfonts.com/font-downloads)
-- **ccls**: Required for C/C++ language server support.
-- **llvm**: Required for debugging (lldb and lldb-dap)
+- **Neovim** (Version 0.7.5 or higher)
+- **Exuberant Ctags** (For tag generation)
+- **JetBrains Nerd Font** ([Download here](https://www.nerdfonts.com/font-downloads))
+- **clangd** (C/C++ language server support)
+- **LLVM** (Includes `lldb` and `lldb-dap` for debugging)
+- **Vim** (For backward compatibility with Vimscript configurations)
 
-## Featured Plugins
+## 🌟 Featured Plugins
 
-This configuration includes a variety of plugins to enhance functionality:
+This configuration includes powerful plugins to enhance productivity:
 
-- `alpha-nvim`: A customizable dashboard for Neovim
-- `autopairs`: Automatically pairs brackets and quotes.
-- `colorscheme`: Enables custom color schemes for the editor.
-- `completion`: Provides code completion features.
-- `lazygit`: Integrates the lazygit terminal tool.
-- `lsp-config`: Configures the Language Server Protocol for languages like Lua, C/C++, CMake, and Markdown.
-- `lualine`: A status line plugin for Neovim.
-- `neogen`: For doxygen comments.
-- `none-ls`: A lightweight LSP alternative.
-- `nvim-tree`: A file explorer plugin.
-- `treesitter`: Improves syntax highlighting and parsing.
-- `telescope`: Offers fuzzy file finding, picking, previewing, and more.
-- `tagbar`: Displays tags in a sidebar for easy navigation.
-- `todo-comments`: Highlights TODO, FIXME, and other annotations within code.
-- `dap`: Debug Adapter Protocol for debugging.
-- `dap-ui`: Debug Adapter Protocol UI for debugging.
-- `dap-virtual-text`: Debug Adapter Protocol virtual text for debugging.
-- `overseer`: Plugin to build and run code using .vscode/launch.json and .vscode/tasks.json configurations.
+- 📌 `alpha-nvim` - Customizable dashboard
+- 🎨 `colorscheme` - Custom themes for a personalized look
+- 🔍 `telescope.nvim` - Fuzzy file searching and previewing
+- 📝 `treesitter` - Improved syntax highlighting
+- 🔧 `nvim-lspconfig` - Language Server Protocol setup
+- 🛠️ `none-ls.nvim` - Lightweight LSP alternative
+- 📂 `nvim-tree` - File explorer
+- 🛑 `dap.nvim` - Debug Adapter Protocol for debugging
+- 📝 `neogen` - Generate Doxygen-style comments
+- 🏷️ `tagbar` - Displays tags in a sidebar
+- ✅ `todo-comments` - Highlights TODO/FIXME comments
+- 🔗 `lazygit` - Git integration
 
-## Keybindings
+## 🎮 Keybindings
 
-Customize your workflow with these keybindings:
+Enhance your workflow with these shortcuts:
 
 ### General Keybindings
-- **Leader Key**: `,` (Customizable in `lua/core/keybindings.lua`)
-- **Hover for Function Info**: `I` (Normal mode)
-- **Go to Definition**: `<leader>gd` (Normal mode)
-- **Go to last cursor position** `<C-o>` (Normal mode)
-- **Code Action**: `<leader>ca` (Normal and Visual mode)
-- **Format Code**: `<leader>cf` (Normal mode)
-- **Lazygit**: `<leader>lg` (Normal mode)
-- **Doxygen Comments**: `<leader>nd` (Normal mode)
-- **Code Formatting**: `<leader>cf` (Normal mode)
-- **Toggle NvimTree**: `<C-b>` (Normal, Insert, and Visual mode)
-- **Open Tagbar**: `<leader>tb` (Normal mode)
-- **Close Tagbar**: `<leader>tc` (Normal mode)
-- **Search Files**: `<C-p>` (Normal mode)
-- **Search Text in Files**: `<leader>g` (Normal mode) (Uses ripgrep)
-- **Move in Insert Mode**: `<C-h>`, `<C-j>`, `<C-k>`, `<C-l>` (Insert mode)
+
+| Action | Keybinding |
+|--------|-----------|
+| **Leader Key** | `,` |
+| **Hover for Function Info** | `I` |
+| **Go to Definition** | `<leader>gd` |
+| **Go to Last Cursor Position** | `<C-o>` |
+| **Code Action** | `<leader>ca` |
+| **Format Code** | `<leader>cf` |
+| **Open File Explorer** | `<C-b>` |
+| **Search Files** | `<C-p>` |
+| **Search Text (Ripgrep)** | `<leader>g` |
 
 ### Debugging Keybindings
-- **Run Build Task from tasks.json**: `<leader>bb` (Normal mode)
-- **Add Breakpoint**: `<leader>db` (Normal mode)
-- **Start/Continue debugging**: `<leader>dc` (Normal mode)
-- **Step over**: `<leader>do` (Normal mode)
-- **Step into**: `<leader>di` (Normal mode)
-- **Step out**: `<leader>du` (Normal mode)
-- **Set Breakpoint Condition**: `<leader>B` (Normal mode)
-- **Set Logpoint message**: `<leader>lp` (Normal mode)
-- **Open REPL**: `<leader>dr` (Normal mode)
-- **Run Latest Debug Session**: `<leader>dl` (Normal mode)
-- **Toggle DAP-UI**: `<leader>dut` (Normal mode)
 
-### Microsoft Copilot Keybindings (and setup)
-Copilot can be setup by running `:Copilot setup` inside nvim.
-You can than follow the instructions shown to activate copilot.
+| Action | Keybinding |
+|--------|-----------|
+| **Run Build Task** | `<leader>bb` |
+| **Add Breakpoint** | `<leader>db` |
+| **Start Debugging** | `<leader>dc` |
+| **Step Over** | `<leader>do` |
+| **Step Into** | `<leader>di` |
+| **Step Out** | `<leader>du` |
+| **Toggle DAP UI** | `<leader>dut` |
 
-- **Copilot suggestion completion**: `<Right>` (Insert mode)
+### Git Keybindings
 
-## Directory Structure
+| Action | Keybinding |
+|--------|-----------|
+| **Open LazyGit** | `<leader>lg` |
+| **Git Diff** | `<leader>gd` |
+| **Git Commit** | `<leader>gc` |
 
-Understand the filetree for easier customization:
+### Copilot Keybindings
+
+| Action | Keybinding |
+|--------|-----------|
+| **Enable Copilot** | `:Copilot setup` |
+| **Accept Suggestion** | `<Right>` |
+
+## 📁 Directory Structure
+
+Understand the file tree for easy customization:
 
 ```zsh
 .
@@ -118,26 +117,26 @@ Understand the filetree for easier customization:
         └── treesitter.lua
 ```
 
-## Try it with Docker
+## 🐳 Running in Docker
 
-**INFO**: A new docker container will be made so the one shown below is obsolete.
-
-
-clone the repository and run the following command:
+You can try this configuration inside a **Docker container**:
 
 ```zsh
 docker build -t neovim-config-test .
 ```
 
-Now that the dockercontainer is built, you can run the following command to start the container:
+Run the container:
 
 ```zsh
 docker run --rm -it neovim-config-test
 ```
 
-To remove the image afterwards, run the following command:
+To remove the image afterward:
 
 ```zsh
 docker rmi neovim-config-test
 ```
 
+---
+
+🚀 **Enjoy your enhanced Neovim experience!** 🚀
