@@ -9,7 +9,7 @@
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "clangd", "marksman" },
+        ensure_installed = { "lua_ls", "marksman", "phpactor", "java_language_server" }, -- "clangd"
       })
     end,
   },
@@ -26,7 +26,8 @@
         capabilities = capabilities
       })
       lspconfig.marksman.setup({
-        capabilities = capabilities
+        capabilities = capabilities,
+        cmd = { "clangd" }
       })
       vim.keymap.set("n", "I", vim.lsp.buf.hover, {})
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
