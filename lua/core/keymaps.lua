@@ -1,11 +1,14 @@
 -- Map ',' to <Leader>
-vim.g.mapleader = ","
+vim.g.mapleader = "ç"
 
 -- Map <C-j> to <Down> in Insert mode
 vim.keymap.set('i', '<C-j>', '<Down>', {silent = true, noremap = true})
 
 -- Map <C-k> to <Up> in Insert mode
 vim.keymap.set('i', '<C-k>', '<Up>', {silent = true, noremap = true})
+
+-- Map <C-k> to <Up> in Normal mode
+vim.keymap.set('n', '<C-k>', '<Up>', {silent = true, noremap = true})
 
 -- Map <C-h> to <Left> in Insert mode
 vim.keymap.set('i', '<C-h>', '<Left>', {silent = true, noremap = true})
@@ -24,4 +27,9 @@ vim.keymap.set('n', '<TAB>', ':tabnext<CR>', {silent = true, noremap = true})
 
 -- Map :tabprevious<CR> to <TAB> in Normal mode
 vim.keymap.set('n', '<S-TAB>', ':tabprevious<CR>', {silent = true, noremap = true})
+
+
+
+-- Map :tabnew<CR> to create a new tab in Normal mode
+vim.keymap.set("n", "<C-t>", ":tabnew<CR>", { noremap = true, silent = true })
 
